@@ -67,7 +67,9 @@ public function index()
         }
 
         $data['product'] = $product;
-
+{
         return view('v_profile', $data);
+    }
+
     }
 }

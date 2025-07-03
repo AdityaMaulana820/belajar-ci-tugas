@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProductModel;
+use Dompdf\Dompdf as DompdfDompdf;
 use Dompf\Dompdf;
 
 class ProdukController extends BaseController
@@ -28,7 +29,7 @@ class ProdukController extends BaseController
 public function beli($id)
 {
     $cart = \Config\Services::cart();
-    $produkModel = new ProdukModel();
+    $produkModel = new ProductModel();
     $produk = $produkModel->find($id);
 
     if (!$produk) {
@@ -123,7 +124,7 @@ public function delete($id)
         $filename = date('y-m-d-H-i-s') . '-produk';
 
         // instantiate and use the dompdf class
-        $dompdf = new Dompdf();
+        $dompdf = new DompdfDompdf();
 
         // load HTML content (file view)
         $dompdf->loadHtml($html);

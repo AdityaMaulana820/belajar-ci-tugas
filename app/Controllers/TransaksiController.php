@@ -129,7 +129,7 @@ public function getCost()
             ],
             'headers' => [
                 'accept' => 'application/json',
-                'key' => $this->apiKey,
+                'key' => $this->apikey,
             ],
         ]
     );
